@@ -7,10 +7,12 @@ class ExpensesController < ApplicationController
   
   def index
     @expenses = Expense.where(:user_id => current_user.id).where.not(:type_id => nil)
+    @total = @expenses.sum(:amount)
   end
 
   def show
     @expenses = Expense.where(:user_id => current_user.id).where(:type_id => nil)
+    @total = @expenses.sum(:amount)
   end
   
   def create
