@@ -1,0 +1,20 @@
+<div class="column">
+    <h1 class="col-12">New Expense</h1>
+    <%= form_with(model: @expense) do |f| %>
+        <div class="field">
+            <%= f.label :name %>
+            <br>
+            <%= f.text_field :name %>
+        </div>
+        
+        <div class="field">
+            <%= f.label :amount %>
+            <br>
+            <%= f.number_field :amount %>
+        </div>
+        
+        <div class="actions">
+            <%= f.submit %>
+        </div>
+    <% end %>
+</div>
