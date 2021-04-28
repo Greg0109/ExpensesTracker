@@ -12,6 +12,12 @@
             <br>
             <%= f.number_field :amount %>
         </div>
+
+        <div class="field">
+            <%= f.label :type_id %>
+            <br>
+            <%= f.select('type_id', @types, {}, {class: 'border-2 border-blue-200 rounded focus:border-blue-500'}) %>
+        </div>
         
         <div class="actions">
             <%= f.submit %>

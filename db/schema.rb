@@ -21,8 +21,8 @@ ActiveRecord::Schema.define(version: 2021_04_28_094215) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
-    t.bigint "types_id"
-    t.index ["types_id"], name: "index_expenses_on_types_id"
+    t.bigint "type_id"
+    t.index ["type_id"], name: "index_expenses_on_type_id"
     t.index ["user_id"], name: "index_expenses_on_user_id"
   end
 
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 2021_04_28_094215) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "expenses", "types", column: "types_id"
+  add_foreign_key "expenses", "types"
   add_foreign_key "expenses", "users"
   add_foreign_key "types", "users"
 end

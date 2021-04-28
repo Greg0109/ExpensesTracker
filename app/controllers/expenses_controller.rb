@@ -1,6 +1,8 @@
 class ExpensesController < ApplicationController
   def new
     @expense = Expense.new
+    @types = Type.all.map { |typ| [typ.name, typ.id] }
+    @types << ['Empty', nil]
   end
   
   def index
@@ -21,6 +23,6 @@ class ExpensesController < ApplicationController
 
   private
   def expense_params
-    params.require(:expense).permit(:name, :amount, :user_id)
+    params.require(:expense).permit(:name, :amount, :user_id, :type_id)
   end
 end
