@@ -2,7 +2,6 @@
     <h1 class="col-12">All Expenses</h1>
     <% @expenses.each do |exp| %>
         <p><%= exp.name %></p>
-        <p><%= get_group_name(exp.type_id) %></p>
         <p><%= exp.amount %></p>
     <% end %>
 </div>

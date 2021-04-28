@@ -6,7 +6,11 @@ class ExpensesController < ApplicationController
   end
   
   def index
-    @expenses = Expense.where(:user_id => current_user.id)
+    @expenses = Expense.where(:user_id => current_user.id).where.not(:type_id => nil)
+  end
+
+  def show
+    @expenses = Expense.where(:user_id => current_user.id).where(:type_id => nil)
   end
   
   def create
