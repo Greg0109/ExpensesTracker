@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 2021_04_28_094215) do
   create_table "expenses", force: :cascade do |t|
     t.string "name"
     t.integer "amount"
-    t.datetime "date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
@@ -29,7 +28,6 @@ ActiveRecord::Schema.define(version: 2021_04_28_094215) do
 
   create_table "types", force: :cascade do |t|
     t.string "name"
-    t.datetime "date"
     t.string "icon"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
