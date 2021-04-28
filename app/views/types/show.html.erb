@@ -1,0 +1,9 @@
+<h1><%= @type.name %></h1>
+<h1>Total spent</h1>
+<p><%= @total %></p>
+<h1>Expenses</h1>
+<% @expenses.each do |exp| %>
+    <p><%= exp.name %></p>
+    <p><%= exp.amount %></p>
+    <p><%= exp.created_at %></p>
+<% end %>

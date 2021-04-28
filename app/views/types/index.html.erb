@@ -1,7 +1,7 @@
 <div class="column">
     <h1 class="col-12">All Types</h1>
     <% @types.each do |typ| %>
-        <p><%= typ.name %></p>
+        <%= link_to typ.name, "/types/#{typ.id}" %>
     <% end %>
     <%= link_to 'Add new', new_type_path %>
 </div>

@@ -1,7 +1,7 @@
 class ExpensesController < ApplicationController
   def new
     @expense = Expense.new
-    @types = Type.all.map { |typ| [typ.name, typ.id] }
+    @types = Type.where(:user_id => current_user.id).all.map { |typ| [typ.name, typ.id] }
     @types << ['Empty', nil]
   end
   

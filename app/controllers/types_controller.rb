@@ -7,6 +7,12 @@ class TypesController < ApplicationController
     @types = Type.where(:user_id => current_user.id)
   end
   
+  def show
+    @type = Type.find_by(id: params[:id])
+    @expenses = @type.expenses.where(:user_id => current_user.id)
+    @total = @expenses.sum(:amount)
+  end
+  
   def create
     @type = current_user.types.build(type_params)
 
