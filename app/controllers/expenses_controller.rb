@@ -3,6 +3,10 @@ class ExpensesController < ApplicationController
     @expense = Expense.new
   end
   
+  def index
+    @expenses = Expense.where(:user_id => current_user.id)
+  end
+  
   def create
     @expense = current_user.expenses.build(expense_params)
 
