@@ -7,13 +7,15 @@
                 <br>
                 <%= f.text_field :name %>
             </div>
-
+            <br>
+            <br>
             <div>
                 <%= f.file_field :icon %>
             </div>
-            
+            <br>
+            <br>
             <div class="actions">
-                <%= f.submit %>
+                <%= f.submit 'Submit', :class =>  'form-btn btn btn-success'%>
             </div>
         <% end %>
     </div>

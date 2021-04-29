@@ -1,5 +1,5 @@
 <div class="w-100 d-flex justify-content-center text-center">
-    <div class="column w-25">
+    <div class="column">
         <h1 class="col-12">New Expense</h1>
         <%= form_with(model: @expense) do |f| %>
             <div class="field">
@@ -13,7 +13,7 @@
                 <br>
                 <%= f.number_field :amount %>
             </div>
-
+            <br>
             <div class="field">
                 <%= f.label :type_id %>
                 <br>
@@ -22,7 +22,7 @@
             <br>
             <br>
             <div class="actions">
-                <%= f.submit 'Submit', :class =>  'btn btn-success'%>
+                <%= f.submit 'Submit', :class =>  'form-btn btn btn-success'%>
             </div>
         <% end %>
     </div>

@@ -4,7 +4,7 @@
         <p><%= @total %> €</p>
         <div class="row">
             <% @expenses.each do |exp| %>
-                <div class="col-4 col-lg-2">
+                <div class="col-12 col-md-4 col-lg-2">
                     <div class="card">
                         <div class="image">
                             <i><%= get_type_icon(exp.type_id) %></i>
