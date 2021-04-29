@@ -1,8 +1,10 @@
-<div class="column">
-    <h1 class="col-12">All Types</h1>
-    <% @types.each do |typ| %>
-        <%= get_type_icon(typ.id) %>
-        <%= link_to typ.name, "/types/#{typ.id}" %>
-    <% end %>
-    <%= link_to 'Add new', new_type_path %>
+<div class="w-100 d-flex justify-content-center text-center">
+    <div class="column">
+        <h1 class="col-12">All Types</h1>
+        <% @types.each do |typ| %>
+            <%= get_type_icon(typ.id) %>
+            <p><%= link_to typ.name, "/types/#{typ.id}" %></p>
+        <% end %>
+        <%= link_to 'Add new', new_type_path %>
+    </div>
 </div>

@@ -1,26 +1,28 @@
-<div class="column">
-    <h1 class="col-12">New Expense</h1>
-    <%= form_with(model: @expense) do |f| %>
-        <div class="field">
-            <%= f.label :name %>
-            <br>
-            <%= f.text_field :name %>
-        </div>
-        
-        <div class="field">
-            <%= f.label :amount %>
-            <br>
-            <%= f.number_field :amount %>
-        </div>
+<div class="w-100 d-flex justify-content-center text-center">
+    <div class="column">
+        <h1 class="col-12">New Expense</h1>
+        <%= form_with(model: @expense) do |f| %>
+            <div class="field">
+                <%= f.label :name %>
+                <br>
+                <%= f.text_field :name %>
+            </div>
+            
+            <div class="field">
+                <%= f.label :amount %>
+                <br>
+                <%= f.number_field :amount %>
+            </div>
 
-        <div class="field">
-            <%= f.label :type_id %>
-            <br>
-            <%= f.select('type_id', @types, {}, {class: 'border-2 border-blue-200 rounded focus:border-blue-500'}) %>
-        </div>
-        
-        <div class="actions">
-            <%= f.submit %>
-        </div>
-    <% end %>
+            <div class="field">
+                <%= f.label :type_id %>
+                <br>
+                <%= f.select('type_id', @types, {}, {class: 'border-2 border-blue-200 rounded focus:border-blue-500'}) %>
+            </div>
+            
+            <div class="actions">
+                <%= f.submit %>
+            </div>
+        <% end %>
+    </div>
 </div>
