@@ -2,22 +2,22 @@ class ExpensesController < ApplicationController
   before_action :authenticate_user!
   def new
     @expense = Expense.new
-    @types = Type.where(:user_id => current_user.id).all.map { |typ| [typ.name, typ.id] }
+    @types = Type.where(user_id: current_user.id).all.map { |typ| [typ.name, typ.id] }
     @types << ['Empty', nil]
   end
-  
+
   def index
-    @expenses = Expense.where(:user_id => current_user.id).where.not(:type_id => nil)
+    @expenses = Expense.where(user_id: current_user.id).where.not(type_id: nil)
     @total = @expenses.sum(:amount)
     @expenses = @expenses.sort_by(&:created_at).reverse
   end
 
   def show
-    @expenses = Expense.where(:user_id => current_user.id).where(:type_id => nil)
+    @expenses = Expense.where(user_id: current_user.id).where(type_id: nil)
     @total = @expenses.sum(:amount)
     @expenses = @expenses.sort_by(&:created_at).reverse
   end
-  
+
   def create
     @expense = current_user.expenses.build(expense_params)
 
@@ -31,6 +31,7 @@ class ExpensesController < ApplicationController
   end
 
   private
+
   def expense_params
     params.require(:expense).permit(:name, :amount, :user_id, :type_id)
   end

@@ -5,18 +5,16 @@ class TypesController < ApplicationController
   end
 
   def index
-    @types = Type.where(:user_id => current_user.id)
+    @types = Type.where(user_id: current_user.id)
   end
-  
+
   def show
     @type = Type.find_by(id: params[:id])
-    @expenses = @type.expenses.where(:user_id => current_user.id)
+    @expenses = @type.expenses.where(user_id: current_user.id)
     @total = @expenses.sum(:amount)
-    if @type.user_id != current_user.id
-      redirect_to root_path
-    end
+    redirect_to root_path if @type.user_id != current_user.id
   end
-  
+
   def create
     @type = current_user.types.build(type_params)
 
@@ -30,6 +28,7 @@ class TypesController < ApplicationController
   end
 
   private
+
   def type_params
     params.require(:type).permit(:name, :icon, :user_id)
   end
