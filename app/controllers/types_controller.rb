@@ -1,4 +1,5 @@
 class TypesController < ApplicationController
+  before_action :authenticate_user!
   def new
     @type = Type.new
   end
@@ -11,6 +12,9 @@ class TypesController < ApplicationController
     @type = Type.find_by(id: params[:id])
     @expenses = @type.expenses.where(:user_id => current_user.id)
     @total = @expenses.sum(:amount)
+    if @type.user_id != current_user.id
+      redirect_to root_path
+    end
   end
   
   def create

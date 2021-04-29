@@ -1,4 +1,5 @@
 class ExpensesController < ApplicationController
+  before_action :authenticate_user!
   def new
     @expense = Expense.new
     @types = Type.where(:user_id => current_user.id).all.map { |typ| [typ.name, typ.id] }
