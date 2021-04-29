@@ -14,10 +14,9 @@ ExpensesTracker is an online web app that allows you to keep track of your expen
 
 [Heroku](https://peaceful-fortress-27562.herokuapp.com/)
 
+### Deployment
 
-## Getting Started
-
-To get a local copy up and running follow these simple example steps.
+` Heroku`
 
 ## Prerequisites
 
@@ -29,31 +28,18 @@ Postgres: >=13.2
 
 yarn
 
-### Setup
+## Getting Started
 
-Instal gems with:
-
-```
-bundle install
-```
-
-Setup database with:
-
-```
-   rails db:create
-   rails db:migrate
-```
-
+To get a local copy up and running follow these simple example steps.
 
 ### Usage
-
-Start server with:
-
-```
-    rails server
-```
-
-Open `http://localhost:3000/` in your browser.
+- You need to have [Ruby On Rails](https://rubyonrails.org/) installed.
+- Start by cloning or downloading this repo to your machine.
+- Open the project folder in your terminal.
+- Run `bundle install` to install needed gems.
+- Run `rails db:migrate` to make sure the database is migrated.
+- Run `rails s` to start the server.
+- Go to `http://localhost:3000/` and sign up to begin testing.
 
 ### Run tests
 
@@ -61,10 +47,6 @@ Open `http://localhost:3000/` in your browser.
     bundle exec rspec
 ```
 
-
-### Deployment
-
-` Heroku`
 
 ## Authors
 
