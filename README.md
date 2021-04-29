@@ -71,7 +71,7 @@ Open `http://localhost:3000/` in your browser.
 👤 **Greg Rabago**
 
 - GitHub: [greg0109](https://github.com/greg0109)
-- Twitter: [greg_0109](https://twitter.com/greg-0109)
+- Twitter: [greg_0109](https://twitter.com/greg_0109)
 
 ## 🤝 Contributing
 
