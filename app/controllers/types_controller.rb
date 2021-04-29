@@ -27,6 +27,6 @@ class TypesController < ApplicationController
 
   private
   def type_params
-    params.require(:type).permit(:name, :user_id)
+    params.require(:type).permit(:name, :icon, :user_id)
   end
 end

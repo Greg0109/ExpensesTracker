@@ -3,8 +3,9 @@
     <p><%= @total %></p>
     <h1 class="col-12">All Expenses</h1>
     <% @expenses.each do |exp| %>
+        <i><%= get_type_icon(exp.type_id) %></i>
         <p><%= exp.name %></p>
-        <p><%= get_group_name(exp.type_id) %></p>
+        <p><%= get_type_name(exp.type_id) %></p>
         <p><%= exp.amount %></p>
         <p><%= exp.created_at %></p>
     <% end %>
