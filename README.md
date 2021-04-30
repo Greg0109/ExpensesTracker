@@ -37,6 +37,7 @@ To get a local copy up and running follow these simple example steps.
 - Start by cloning or downloading this repo to your machine.
 - Open the project folder in your terminal.
 - Run `bundle install` to install needed gems.
+- Run `rails db:create` to make sure the database is created.
 - Run `rails db:migrate` to make sure the database is migrated.
 - Run `rails s` to start the server.
 - Go to `http://localhost:3000/` and sign up to begin testing.
