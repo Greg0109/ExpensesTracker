@@ -21,7 +21,7 @@ class TypesController < ApplicationController
 
     respond_to do |format|
       if @type.save
-        format.html { redirect_to root_path, notice: 'type was successfully created.' }
+        format.html { redirect_to types_path, notice: 'type was successfully created.' }
       else
         format.html { render :new, status: :unprocessable_entity }
       end

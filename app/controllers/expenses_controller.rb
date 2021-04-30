@@ -23,7 +23,11 @@ class ExpensesController < ApplicationController
 
     respond_to do |format|
       if @expense.save
-        format.html { redirect_to root_path, notice: 'expense was successfully created.' }
+        if @expense.type_id.nil?
+          format.html { redirect_to '/expenses/show', notice: 'expense was successfully created.' }
+        else
+          format.html { redirect_to "/types/#{@expense.type_id}", notice: 'expense was successfully created.' }
+        end
       else
         format.html { render :new, status: :unprocessable_entity }
       end
