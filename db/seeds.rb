@@ -8,3 +8,8 @@
 require 'faker'
 
 User.create(name:'Greg', email:'greg.rabago@gmail.com', password:'123456', password_confirmation:'123456')
+User.create(name:'Ryel', email:'ryel.banfield@gmail.com', password:'password', password_confirmation:'password')
+
+20.times do
+    Expense.create(name:Faker::House.furniture, amount: Faker::Number.within(range: 1...1000), user_id:rand(1..2), type_id:nil)
+end
