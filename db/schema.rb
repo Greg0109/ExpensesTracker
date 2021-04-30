@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 2021_04_29_065358) do
   create_table "types", force: :cascade do |t|
     t.string "name"
     t.string "icon"
+    t.integer "budget"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false

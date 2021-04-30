@@ -11,6 +11,7 @@ class TypesController < ApplicationController
   def show
     @type = Type.find_by(id: params[:id])
     @expenses = @type.expenses.where(user_id: current_user.id)
+    @budget = @type.budget
     @total = @expenses.sum(:amount)
     redirect_to root_path if @type.user_id != current_user.id
   end
@@ -30,6 +31,6 @@ class TypesController < ApplicationController
   private
 
   def type_params
-    params.require(:type).permit(:name, :icon, :user_id)
+    params.require(:type).permit(:name, :icon, :budget, :user_id)
   end
 end

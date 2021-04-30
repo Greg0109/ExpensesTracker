@@ -1,8 +1,10 @@
 <div class="w-100 d-flex justify-content-center text-center">
     <div class="column w-75">
         <h1><%= @type.name %></h1>
-        <h1>Total spent</h1>
-        <p><%= @total %> €</p>
+        <h2>Total spent</h1>
+        <h3><%= @total %> €</h3>
+        <h5><%= calculate_budget(@budget, @total) %></h5>
+        <br>
         <div class="row">
             <% @expenses.each do |exp| %>
                 <div class="col-12 col-md-4 col-lg-2">
