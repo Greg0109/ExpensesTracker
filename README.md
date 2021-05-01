@@ -39,6 +39,7 @@ To get a local copy up and running follow these simple example steps.
 - Run `bundle install` to install needed gems.
 - Run `rails db:create` to make sure the database is created.
 - Run `rails db:migrate` to make sure the database is migrated.
+- Run `rails webpacker:install` to make sure both webpacker is installed (yarn should install too, but if not run `yarn install`)
 - Run `rails s` to start the server.
 - Go to `http://localhost:3000/` and sign up to begin testing.
 
@@ -48,6 +49,8 @@ To get a local copy up and running follow these simple example steps.
     bundle exec rspec
 ```
 
+### Credits
+[Design made by Gregorie Vella](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=)
 
 ## Authors
 
