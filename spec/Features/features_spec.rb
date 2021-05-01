@@ -20,7 +20,7 @@ RSpec.describe 'Test different features', type: :system do
     fill_in 'user[email]', with: 'test@test.me'
     fill_in 'user[password]', with: '123456'
     fill_in 'user[password_confirmation]', with: '123456'
-    find('.btn-success').click
+    find('.btn-colorprimary').click
     expect(current_path).to eq(root_path)
   end
 
