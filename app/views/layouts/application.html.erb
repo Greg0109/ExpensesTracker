@@ -10,42 +10,38 @@
   <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 </head>
-<nav class="navbar navbar-expand-lg navbar-light">
-  <a class="navbar-brand" href="/">Expenses Tracker</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse justify-content-end bg-md-light" id="navbarNav">
-    <ul class="navbar-nav">
-      <% if user_signed_in? %>
-        <li class="nav-item">
-          <a class="nav-link" href="/expenses/new">Add Expense</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/expenses">All Expenses</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/expenses/show">All External Expenses</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/types">Types</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/users/edit"><%= current_user.name %></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/users/sign_out">Logout</a>
-        </li>
-      <% else %>
-        <li class="nav-item">
-          <a class="nav-link" href="/users/sign_up">Sign up</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/users/sign_in">Login</a>
-        </li>
-      <% end %>
-    </ul>
+<nav class="btn-colorprimary">
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <% if user_signed_in? %>
+      <a class="nav-link text-white" href="/expenses/new">Add Expense</a>
+      <a class="nav-link text-white" href="/expenses">All Expenses</a>
+      <a class="nav-link text-white" href="/expenses/show">All External Expenses</a>
+      <a class="nav-link text-white" href="/types">Types</a>
+      <a class="nav-link text-white" href="/users/edit"><%= current_user.name %></a>
+      <a class="nav-link text-white" href="/users/sign_out">Logout</a>
+    <% else %>
+      <a class="nav-link text-white" href="/users/sign_up">Sign up</a>
+      <a class="nav-link text-white" href="/users/sign_in">Login</a>
+    <% end %>
   </div>
+
+  <div class="pl-3 pb-2 pl-md-5">
+    <div class="row">
+      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+      <a href="/" class="text-white pt-1"><h2>ExpensesTracker</h2></a>
+    </div>
+  </div>
+
+  <script>
+  function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+  }
+
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+  }
+  </script>
 </nav>
 <body>
   <%= yield %>
