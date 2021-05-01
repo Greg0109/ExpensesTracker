@@ -1,0 +1,27 @@
+<div class="w-100 d-flex justify-content-center text-center">
+    <div class="column">
+        <h1 class="col-12">New Type</h1>
+        <%= form_with(model: @type) do |f| %>
+            <div class="field">
+                <%= f.label :name %>
+                <br>
+                <%= f.text_field :name %>
+            </div>
+            <div class="field">
+                <%= f.label :budget %>
+                <br>
+                <%= f.number_field :budget %>
+            </div>
+            <br>
+            <br>
+            <div>
+                <%= f.file_field :icon %>
+            </div>
+            <br>
+            <br>
+            <div class="actions">
+                <%= f.submit 'Submit', :class =>  'form-btn btn btn-colorprimary'%>
+            </div>
+        <% end %>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="w-100 d-flex justify-content-center text-center">
+    <div class="column">
+        <h1 class="col-12">New Expense</h1>
+        <%= form_with(model: @expense) do |f| %>
+            <div class="field">
+                <%= f.label :name %>
+                <br>
+                <%= f.text_field :name %>
+            </div>
+            
+            <div class="field">
+                <%= f.label :amount %>
+                <br>
+                <%= f.number_field :amount %>
+            </div>
+            <br>
+            <div class="field">
+                <%= f.label :type_id %>
+                <br>
+                <%= f.select('type_id', @types, {}) %>
+            </div>
+            <br>
+            <br>
+            <div class="actions">
+                <%= f.submit 'Submit', :class =>  'form-btn btn btn-colorprimary'%>
+            </div>
+        <% end %>
+    </div>
+</div>

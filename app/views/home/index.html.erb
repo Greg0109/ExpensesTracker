@@ -1,0 +1,14 @@
+<div class="w-100 d-flex justify-content-center text-center">
+    <div class="mainbody text-center">
+            <div class="maintext text-center w-100">
+                <h1 class="pt-5"> Welcome <%= current_user.name %>! </h1>
+                <p class="pb-2">ExpensesTracker: An easy way to manage your expenses and keep track of your budget! </p>
+                <div class="column">
+                    <a class="col-12 col-md-3 btn btn-colorprimary m-1" href="/expenses/new">New</a>
+                    <a class="col-12 col-md-3 btn btn-colorprimary m-1" href="/expenses">Expenses</a>
+                    <a class="col-12 col-md-3 btn btn-colorprimary m-1" href="/expenses/show">External</a>
+                    <a class="col-12 col-md-3 btn btn-colorprimary m-1" href="/types">Types</a>
+                </div>
+            </div>
+    </div>
+</div>

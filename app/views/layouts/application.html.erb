@@ -1,16 +1,49 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ExpensesTracker</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+  <title>ExpensesTracker</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+</head>
+<nav class="nav-colorprimary">
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <% if user_signed_in? %>
+      <a class="nav-link text-white" href="/expenses/new">Add Expense</a>
+      <a class="nav-link text-white" href="/expenses">All Expenses</a>
+      <a class="nav-link text-white" href="/expenses/show">All External Expenses</a>
+      <a class="nav-link text-white" href="/types">Types</a>
+      <a class="nav-link text-white" href="/users/edit"><%= current_user.name %></a>
+      <a class="nav-link text-white" href="/users/sign_out">Logout</a>
+    <% else %>
+      <a class="nav-link text-white" href="/users/sign_up">Sign up</a>
+      <a class="nav-link text-white" href="/users/sign_in">Login</a>
+    <% end %>
+  </div>
 
-  <body>
-    <%= yield %>
-  </body>
+  <div class="pl-3 pb-2 pl-md-5">
+    <div class="row">
+      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+      <a href="/" class="text-white pt-1"><h2>ExpensesTracker</h2></a>
+    </div>
+  </div>
+
+  <script>
+  function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+  }
+
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+  }
+  </script>
+</nav>
+<body>
+  <%= yield %>
+</body>
 </html>
